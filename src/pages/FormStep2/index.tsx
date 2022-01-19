@@ -39,7 +39,7 @@ export const FormStep2 = () => {
   return(
     <Theme> 
       <C.Container>
-        <p>Passo 2/3</p>
+        <p>Passo 2/4</p>
         <h1>{state.name}, qual destes níveis te descreve melhor?</h1>
         <p>Escolha a opção que melhor descreve seu nível profissional.</p>
 

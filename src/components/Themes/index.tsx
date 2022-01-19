@@ -41,6 +41,13 @@ export const Theme = ({children}: Props) => {
               path="/step3"
               active={state.currentStep === 3}
             />
+            <SidebarItem 
+              title="Verificar"
+              description="verifique os dados"
+              icon="globe"
+              path="/step4"
+              active={state.currentStep === 4}
+            />
             
  
 
