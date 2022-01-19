@@ -25,7 +25,7 @@ export const Container = styled.div`
       box-sizing: border-box;
       width: 100%;
       padding: 15px 10px;
-      border: 1px solid #25CD89;
+      border: 2px solid #25CD89;
       border-radius: 10px;
       color: #fff;
       outline: 0;
@@ -38,7 +38,7 @@ export const Container = styled.div`
     color: #fff;
     font-size: 16px;
     font-weight: bold;
-    padding: 20px  40px;
+    padding: 10px  20px;
     border: 0;
     border-radius: 20px;
     cursor: pointer;

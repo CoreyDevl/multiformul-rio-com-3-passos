@@ -1,15 +1,33 @@
 import { useNavigate } from 'react-router-dom';
 import * as C from './styles';
 import { Theme } from '../../components/Themes';
-
+import { useForm, FormActions } from '../../contexts/FormContext';
+import { ChangeEvent, useEffect } from 'react';
 export const FormStep1 = () => {
   
   const navigate = useNavigate();
-  
-  const handleNextStep = () => {
-    navigate('/step2');
-  }
+  const { state, dispatch } = useForm();
 
+  useEffect(()=> {
+    dispatch({
+      type: FormActions.setCurrentStep,
+      payload: 1
+    })
+  },[]);
+
+  const handleNextStep = () => {
+    if(state.name !== ''){
+      navigate('/step2');
+   }else{
+     alert('Digite seu nome')
+   }
+  }
+  const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch({
+      type: FormActions.setName,
+      payload: e.target.value
+    })
+  }
 
   return(
     <Theme> 
@@ -25,6 +43,8 @@ export const FormStep1 = () => {
         <input 
           type="text"
           autoFocus
+          value={state.name}
+          onChange={handleNameChange}
         />
         </label>
         <button onClick={handleNextStep}>Próximo</button>
